@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HeThongDatMonVaXuLyBep.Client/HeThongDatMonVaXuLyBep.Client.csproj" />
+    <Project Path="src/HeThongDatMonVaXuLyBep/HeThongDatMonVaXuLyBep.csproj" />
+  </Folder>
+</Solution>

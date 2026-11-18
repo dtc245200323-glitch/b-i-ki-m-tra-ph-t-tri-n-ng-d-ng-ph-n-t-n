@@ -1,0 +1,6 @@
+@HeThongDatMonVaXuLyBep_HostAddress = http://localhost:5227
+
+GET {{HeThongDatMonVaXuLyBep_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
