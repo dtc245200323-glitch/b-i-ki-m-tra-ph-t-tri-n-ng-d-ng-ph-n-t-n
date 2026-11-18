@@ -1,0 +1,22 @@
+{
+  "executedAt": "2026-11-18T03:36:27.765Z",
+  "results": [
+    {
+      "name": "TC21 Broker stopped: REST accepts conversation and retains durable outbox",
+      "status": "PASS",
+      "pendingEvents": 1
+    },
+    {
+      "name": "TC22 Broker restarted: pending outbox drains automatically",
+      "status": "PASS"
+    },
+    {
+      "name": "TC23 Repeated EventId archived exactly once",
+      "status": "PASS"
+    },
+    {
+      "name": "TC24 Malformed event moved to dead-letter queue",
+      "status": "PASS"
+    }
+  ]
+}

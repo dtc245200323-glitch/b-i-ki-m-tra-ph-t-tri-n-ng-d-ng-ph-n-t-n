@@ -1,0 +1,39 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    environment:
+      RABBITMQ_DEFAULT_USER: supportly
+      RABBITMQ_DEFAULT_PASS: supportly-dev
+    ports: ["127.0.0.1:5672:5672", "127.0.0.1:15672:15672"]
+    volumes: ["rabbit-data:/var/lib/rabbitmq"]
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+  api:
+    build:
+      context: .
+      dockerfile: src/Supportly.Api/Dockerfile
+    ports: ["127.0.0.1:5080:8080"]
+    environment:
+      DataPath: /data/supportly.db
+      SeedDemo: "true"
+      RabbitMQ__Host: rabbitmq
+    volumes: ["chat-data:/data"]
+    depends_on:
+      rabbitmq: {condition: service_healthy}
+  worker:
+    build:
+      context: .
+      dockerfile: src/Supportly.Worker/Dockerfile
+    ports: ["127.0.0.1:5081:8080"]
+    environment:
+      DataPath: /data/supportly.db
+      RabbitMQ__Host: rabbitmq
+    volumes: ["chat-data:/data"]
+    depends_on:
+      rabbitmq: {condition: service_healthy}
+volumes:
+  rabbit-data:
+  chat-data:

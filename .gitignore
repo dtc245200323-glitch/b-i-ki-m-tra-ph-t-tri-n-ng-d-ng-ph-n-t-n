@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+data/
+.tools/
+tmp/
+.nuget/
+.dotnet/
+node_modules/
+*.log
+.npm-cache/
+output/Supportly-App/
+output/*.zip
+output/manifest.json

@@ -1,0 +1,9 @@
+.tools
+.dotnet
+.nuget
+tmp
+output
+data
+**/bin
+**/obj
+.git

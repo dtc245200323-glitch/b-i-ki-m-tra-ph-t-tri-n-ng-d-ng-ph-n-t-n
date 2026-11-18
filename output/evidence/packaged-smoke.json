@@ -1,0 +1,12 @@
+{
+    "loginRole":  "Customer",
+    "api":  {
+                "service":  "Supportly.Api",
+                "status":  "running"
+            },
+    "result":  "PASS",
+    "worker":  {
+                   "status":  "ready",
+                   "processed":  0
+               }
+}
