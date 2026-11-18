@@ -1,1 +1,0 @@
-{"name":"supportly-validation","private":true,"type":"module","scripts":{"test":"node tests/integration.mjs","test:ui":"node tests/browser.mjs"},"devDependencies":{"playwright":"1.58.2"}}
